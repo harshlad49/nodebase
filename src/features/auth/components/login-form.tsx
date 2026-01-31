@@ -7,7 +7,7 @@ import {useForm} from "react-hook-form"
 import {z} from "zod"
 import {toast} from "sonner"
 import {Button} from "@/components/ui/button"
-
+import Image from "next/image"
 import {
   Card,
   CardContent,  CardDescription,  CardHeader,
@@ -74,8 +74,13 @@ export function LoginForm() {
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full" disabled={isPending} type="button"> Continue with GitHub</Button>
-                 <Button variant="outline" className="w-full" disabled={isPending} type="button"> Continue with Google</Button>
+                <Button variant="outline" className="w-full" disabled={isPending} type="button">
+                   <Image alt="GitHub" src="/logos/github.svg"  width={20} height={20}/>
+                   Continue with GitHub
+                   </Button>
+                 <Button variant="outline" className="w-full" disabled={isPending} type="button"> 
+                    <Image alt="Google" src="/logos/google.svg"  width={20} height={20} />
+                Continue with Google</Button>
               </div>
               <div className="flex flex-col gap-6">
                 <FormField 
@@ -112,7 +117,7 @@ export function LoginForm() {
                       <Button type="submit" disabled={isPending} className="w-full">Login</Button>
               </div>
               <div className="text-center text-sm">
-                Don&apos;t have an account?{" "} <Link href="/singup" className="underline underline-offset-4">Sign up</Link>
+                Don&apos;t have an account?{" "} <Link href="/signup" className="underline underline-offset-4">Sign up</Link>
                 </div>
               </div> 
               </form>

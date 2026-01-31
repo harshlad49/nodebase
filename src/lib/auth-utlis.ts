@@ -9,11 +9,11 @@ export const requireAuth = async () => {
 })
 
 if(!session) {
-  redirect('/login')
+  redirect("/login")
 }
 
 return session;
-}
+};
 
 export const requireUnauth = async () => {
 
@@ -21,7 +21,7 @@ export const requireUnauth = async () => {
     headers: await headers(),
 })
 
-if(!session) {
-  redirect('/')
+if(session) {
+  redirect("/")
 }
 };

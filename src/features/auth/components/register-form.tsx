@@ -8,7 +8,7 @@ import {useForm} from "react-hook-form"
 import {z} from "zod"
 import {toast} from "sonner"
 import {Button} from "@/components/ui/button"
-
+import Image from "next/image"
 import {
   Card,
   CardContent,  CardDescription,  CardHeader,
@@ -86,8 +86,13 @@ export function RegisterForm() {
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full" disabled={isPending} type="button"> Continue with GitHub</Button>
-                 <Button variant="outline" className="w-full" disabled={isPending} type="button"> Continue with Google</Button>
+                <Button variant="outline" className="w-full" disabled={isPending} type="button">
+                   <Image alt="GitHub" src="/logos/github.svg"  width={20} height={20} />
+
+                  Continue with GitHub</Button>
+                 <Button variant="outline" className="w-full" disabled={isPending} type="button"> 
+                  <Image alt="Google" src="/logos/google.svg"  width={20} height={20} />
+                  Continue with Google</Button>
               </div>
               <div className="flex flex-col gap-6">
                 <FormField 
